@@ -5,15 +5,13 @@
 - [Arbre B d’ordre m](#arbre-b-dordre-m)
   - [Complexité temporelle](#complexité-temporelle)
   - [Propriétés](#propriétés)
-  - [Exemple](#exemple)
-    - [Exemple d’arbre B d’ordre m = 2](#exemple-darbre-b-dordre-m--2)
   - [Notation](#notation)
+  - [Insertion](#insertion)
+    - [Exemple 1 : Insertion de l’arbre B d’ordre 4](#exemple-1-insertion-de-larbre-b-dordre-4)
   - [Recherche](#recherche)
     - [Exemple Recherche de 15](#exemple-recherche-de-15)
   - [Nombre de clé dans un Arbre B d’ordre m, et de hauteur h](#nombre-de-clé-dans-un-arbre-b-dordre-m-et-de-hauteur-h)
     - [Exemple avec m = 100 et h = 2](#exemple-avec-m--100-et-h--2)
-  - [Insertion](#insertion)
-    - [Exemple 1 : Insertion de l’arbre B d’ordre 4](#exemple-1-insertion-de-larbre-b-dordre-4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -43,12 +41,6 @@ n correspond au nombre noeuds dans l'arbre.
 5. Toutes les feuilles sont à distance égale de la racine.
 6. Tous les éléments accessibles depuis le i-ème enfants sont supérieurs à la clé ki−1 et inférieurs à la clé ki.
 
-## Exemple
-### Exemple d’arbre B d’ordre m = 2
-- Chaque nœud, sauf la racine, contient k clés (2 ≤ k ≤ 4)
-- La racine contient k clés (1 ≤ k ≤ 4)
-  
-![Exemple d’arbre B d’ordre m = 2]()
 
 ## Notation
 | Étiquette | Signification |
@@ -56,6 +48,22 @@ n correspond au nombre noeuds dans l'arbre.
 | K | Cle(un noeud k valeurs) |
 | m | Un arbre-B d'ordre |
 | P | Pointeur |
+
+## Insertion
+  
+1. on recherche la feuille où devrait se trouver l’élément e ;
+2. une fois la feuille trouvée, on insère l’élément dans la feuille trouvée; l’unique exception est l’insertion du premier élément où la racine doit être créée;
+3. si la capacité du nœud n’est pas dépassée (un nœud contient au plus m − 1 clés), l’opération est terminée ;
+4. si la capacité est dépassée, on scinde le nœud en deux, et on remonte la clé médiane vers le nœud parent ;
+5. si le nœud parent dépasse sa capacité, on le scinde à nouveau, et ce, jusqu’à temps de remonter à la racine ;
+6. enfin, dans le cas où la capacité de la racine est dépassée, une nouvelle racine est créée.
+
+
+### Exemple 1 : Insertion de l’arbre B d’ordre 4
+
+![Insertion](./Insertion-1.png)
+
+![Insertion](Insertion-2.png)
 
 ## Recherche
   
@@ -77,19 +85,3 @@ A partir de la racine, pour chaque nœud on examine :
 
 - Nb clés min = 20401 et 
 - Nb clés max =8 120 600
-
-## Insertion
-  
-1. on recherche la feuille où devrait se trouver l’élément e ;
-2. une fois la feuille trouvée, on insère l’élément dans la feuille trouvée; l’unique exception est l’insertion du premier élément où la racine doit être créée;
-3. si la capacité du nœud n’est pas dépassée (un nœud contient au plus m − 1 clés), l’opération est terminée ;
-4. si la capacité est dépassée, on scinde le nœud en deux, et on remonte la clé médiane vers le nœud parent ;
-5. si le nœud parent dépasse sa capacité, on le scinde à nouveau, et ce, jusqu’à temps de remonter à la racine ;
-6. enfin, dans le cas où la capacité de la racine est dépassée, une nouvelle racine est créée.
-
-
-### Exemple 1 : Insertion de l’arbre B d’ordre 4
-
-![Insertion](./Insertion-1.png)
-
-![Insertion](./Insertion-2.png)
