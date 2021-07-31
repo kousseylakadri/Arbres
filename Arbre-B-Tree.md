@@ -90,4 +90,6 @@ A partir de la racine, pour chaque nœud on examine :
 
 ### Exemple 1 : Insertion de l’arbre B d’ordre 4
 
-![Insertion](Insrtion-1.HEIC)
+![Insertion](./Insertion-1.png)
+
+![Insertion](./Insertion-2.png)
