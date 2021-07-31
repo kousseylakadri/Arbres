@@ -63,7 +63,7 @@ n correspond au nombre noeuds dans l'arbre.
 
 ![Insertion](./Images/Insertion-1.png)
 
-![Insertion](./Images/Insertion-2.pngInsertion-2.png)
+![Insertion](./Images/Insertion-2.png)
 
 ## Recherche
   
