@@ -8,8 +8,10 @@
   - [Notation](#notation)
   - [Insertion](#insertion)
     - [Exemple 1 : Insertion de l’arbre B d’ordre 4](#exemple-1-insertion-de-larbre-b-dordre-4)
+  - [Enlèvement](#enlèvement)
+    - [Exemple 17 18 0](#exemple-17-18-0)
   - [Recherche](#recherche)
-    - [Exemple Recherche de 15](#exemple-recherche-de-15)
+    - [Exemple Recherche de 23](#exemple-recherche-de-23)
   - [Nombre de clé dans un Arbre B d’ordre m, et de hauteur h](#nombre-de-clé-dans-un-arbre-b-dordre-m-et-de-hauteur-h)
     - [Exemple avec m = 100 et h = 2](#exemple-avec-m--100-et-h--2)
 
@@ -65,17 +67,32 @@ n correspond au nombre noeuds dans l'arbre.
 
 ![Insertion](./Images/Insertion-2.png)
 
-## Recherche
-  
-A partir de la racine, pour chaque nœud on examine :
-- La clé est présente -> succès
-- K < K<sub>0</sub> -> recherche dans P<sub>0</sub>
-- K > K -> recherche dans P<sub>k</sub>
-- K<sub>i</sub> < K < K<sub>i</sub>+1 -> recherche dans P<sub>i</sub>
-  
-### Exemple Recherche de 15
+## Enlèvement
 
-![Recherche de 15]()
+L’enlèvement d’un élément e fonctionne comme suit :
+- on recherche la feuille où se trouve l’élément e et on y enlève e ; 
+- si le nombre de clés devient inférieur à ⌊m/2⌋ :
+  - si les deux nœuds frères ont un nombre de clés supérieur à ⌊m/2⌋, on peut emprunter une clé d’un frère et ou d'un pere ;
+  - sinon, on fusionne le nœud avec l’un de ses frères ;
+- lors d’une fusion, on descend une clé du nœud parent et on répète l’étape 2 sur ce dernier.
+  
+### Exemple 17 18 0
+
+![Enlèvement](./Images/enlevement.png)
+
+## Recherche
+
+La recherche d’un élément e dans un arbre B se fait comme suit :
+- le nœud de départ est la racine ;
+- on recherche la plus grande clé ki dans le nœud courant tel quel ki <= e ;
+- si ki = e, alors l’élément a été trouvé ;
+- sinon, le i-ème nœud enfant devient le nœud courant et on répète l’étape 2 de la procédure ; 
+- si on ne trouve pas la clé dans une feuille, alors l’élément e n’existe pas dans l’arbre.  
+
+  
+### Exemple Recherche de 23
+
+![Recherche](./Images/reherche.png)
 
 ## Nombre de clé dans un Arbre B d’ordre m, et de hauteur h
 - Nb clés min = 2*(m+1) h  - 1
