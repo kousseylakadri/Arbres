@@ -61,9 +61,9 @@ n correspond au nombre noeuds dans l'arbre.
 
 ### Exemple 1 : Insertion de l’arbre B d’ordre 4
 
-![Insertion](./Insertion-1.png)
+![Insertion](./Images/Insertion-1.png)
 
-![Insertion](Insertion-2.png)
+![Insertion](./Images/Insertion-2.pngInsertion-2.png)
 
 ## Recherche
   
