@@ -14,6 +14,7 @@
     - [Exemple Recherche de 23](#exemple-recherche-de-23)
   - [Nombre de clé dans un Arbre B d’ordre m, et de hauteur h](#nombre-de-clé-dans-un-arbre-b-dordre-m-et-de-hauteur-h)
     - [Exemple avec m = 100 et h = 2](#exemple-avec-m--100-et-h--2)
+  - [calculer le max et le min de h](#calculer-le-max-et-le-min-de-h)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -102,6 +103,7 @@ La recherche d’un élément e dans un arbre B se fait comme suit :
 
 - Nb clés min = 20401 et 
 - Nb clés max =8 120 600
-## calculer le max et le min de 
+
+## calculer le max et le min de h 
 [Logarithm Calculator](https://www.rapidtables.com/calc/math/Log_Calculator.html)
 ![calculer](./Images/calculer.png)
