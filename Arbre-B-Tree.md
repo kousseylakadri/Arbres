@@ -102,3 +102,6 @@ La recherche d’un élément e dans un arbre B se fait comme suit :
 
 - Nb clés min = 20401 et 
 - Nb clés max =8 120 600
+## calculer le max et le min de 
+[Logarithm Calculator](https://www.rapidtables.com/calc/math/Log_Calculator.html)
+![calculer](./Images/cacluler.png)
