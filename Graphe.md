@@ -12,6 +12,7 @@
 	- [Parcours](#parcours)
 		- [Parcours en profondeur (Depth-First Search)](#parcours-en-profondeur-depth-first-search)
 			- [Propriétés du parcours en profondeur](#propriétés-du-parcours-en-profondeur)
+			- [Exemple](#exemple-1)
 		- [Parcours en largeur (Breadth-First Search)](#parcours-en-largeur-breadth-first-search)
 			- [Propriétés du parcours en largeur](#propriétés-du-parcours-en-largeur)
 			- [Exemple :](#exemple-)
@@ -77,6 +78,81 @@ E = \{(a,b), (a,c), (b,c), (c,b)\}
   
   Les arêtes sélectionnées lors du parcours DFS(G,s) forme un arbre couvrant pour la composant connexe de s
 
+#### Exemple 
+📚 [Refernce](https://www.metasyntactic.io/index.php/2019/11/16/graphes-iii-parcours-en-profondeur/)
+<center>
+
+Considérons le graphe suivant:
+
+![0](Images/graphe_2.png)
+
+Choisissons le nœud `0` comme origine. C’est à partir de ce nœud que nous parcourrons le graphe.
+
+Marquons le nœud `0` comme visité:
+
+![1](Images/dfs_1.png)
+
+`Le noeud 0 est visité.`
+
+Les nœuds voisins de `0` sont `1`, `4` et `5`. Nous commençons par le nœud `5`.
+
+![2](Images/dfs_2.png)
+
+`Le noeud 5 est visité.`
+
+`5` a trois voisins: `0`, `4` et `6`. `0` est déjà visité. Restent `4` et `6`.
+
+Nous visitions `6`:
+
+![3](Images/dfs_3.png)
+
+`Le noeud 6 est visité.`
+
+`6` n’a qu’un voisin non visité: le noeud `4`.
+
+![4](Images/dfs_4.png)
+
+`Le noeud 4 est visité.`
+
+Le nœud `4` n’a pas de nœuds voisins non visités. On revient donc en arrière (backtracking) au nœud `6`. De même, le nœud `6` n’a pas de voisins non visités. Nous backtrackons alors jusqu’au nœud `5`, puis enfin au nœud `0`.
+
+Nous venons d’explorer en profondeur la branche de l’arrête (`0`, `5`).
+
+`0` a encore un voisin non exploré: le nœud `1`. Explorons désormais la branche créée par l’arrête (`0`, `1`):
+
+
+![5](Images/dfs_5.png)
+
+`Le noeud 1 est visité.`
+
+`1` a deux voisins non visités: `2` et `3`. Visitons `3`:
+
+![6](Images/dfs_6.png)
+
+`Le noeud 3 est visité.`
+
+Enfin, visitons `2`:
+
+![7](Images/dfs_7.png)
+
+`Le noeud 2 est visité.`
+
+Pour finir avec `7`:
+
+![8](Images/dfs_8.png)
+
+`Le noeud 8 est visité.`
+
+Nous venons de visiter tout le graphe en profondeur.
+
+</center>
+
+**Que se passe-t-il?**
+
+En partant d’un `nœud racine` **N**, l’algorithme va explorer les arrêtes de N pour trouver les nœuds directement accessibles depuis **N**.
+
+On dit que le `DFS` parcourt le graphe `en profondeur` puisqu’il va le plus loin possible à partir d’un voisin du nœud racine, puis dès qu’il ne peut plus continuer, il `backtrack` jusqu’à pouvoir s’enfoncer à nouveau dans une autre branche.
+
 ### Parcours en largeur (Breadth-First Search)
 - Visite tous les sommets et toutes les arêtes de G 
 - Détermine si G est connexe ou non
@@ -97,20 +173,49 @@ On explore les sommets successeurs directs
 `NB : que avec le parcour en largeur qu'on trouve le plus court chemin`
 
 #### Exemple : 
-![](Images/graph_huit_sommets.jpg)
-| Etapes | Detailles | Images |
-| :---: | :---: | :---: |
-| 1 | On part du sommet `1`, on liste tous les sommets successeurs, il s'agit donc des sommets `2` et `3`. Marquons les d'une couleur différente pour ne pas les passer deux fois| ![](Images/graph_huit_sommets_2_3.jpg)|
-| 2 | Il n'y a plus de sommets directement accessibles à partir du sommet `1`. Il faut donc maintenant chercher ceux qui sont accessibles en passant par un sommet. Ceci revient en fait à chercher les successeurs des sommets précédemment parcourus. On doit donc parcourir à nouveau en largeur mais en partant des sommets précedemment explorés. On commence par le sommet `2`, le seul successeur est le sommet `4`, on l'affiche et on le marque comme étant parcouru. On passe au sommet `3`, tout comme le sommet `2`, il n'a qu'un seul successeur. On le marque comme déjà  parcouru | ![](Images/graph_huit_sommets_4_6.jpg)|
+📚 [Refernce](https://www.metasyntactic.io/index.php/2019/10/27/graphes-ii-parcours-en-largeur/)
+<center>
+Considérons le graphe suivant:
 
-On vient donc de parcourir tous les sommets accessibles depuis le sommet 1 en passant par un sommet. Il faut donc maintenant parcourir les commets accessibles en passant par deux sommets.
+![0](Images/graphe_2.png)
 
-Il faut donc parcourir en partant des sommets 4 et 6. Le sommet 4 a deux successeurs, le sommet 5 et le sommet 6. Or le sommet 6 a déjà été visité, on ne doit donc pas le mettre dans la file des sommets à parcourir. On ajoutera seulement le sommet 5 à la file des sommets à parcourir.
+Choisissons le nœud `0` comme origine. C’est à partir de ce nœud que nous parcourrons le graphe.
 
-Concernant le parcours à partir du sommet 6, il n'y a rien à faire, en effet, celui ci n'a pas de successeurs.
+Marquons le nœud `0` comme visité:
 
-On réitère le processus jusqu'à avoir parcouru tous nos sommets.
+![0](Images/bfs_visited_1.png)
 
-Essayons maintenant de dégager un algorithme de cet exemple. Il parait assez clair qu'il faut avoir une file pour stocker la liste des sommets à parcourir et qu'il nous faut un moyen d'identifier les sommets déjà parcourus.
+`Le noeud 0 est marqué comme visité.`
 
-Pour identifier les sommets parcourus, habituellement, on utilise le coloriage. Généralement, un sommet est blanc s'il n'a pas été parcouru et est noir dans le cas contraire. Certains mettent les sommets à parcourir en gris mais cela n'a aucun intérêt pour le fonctionnement de l'algorithme, il s'agit juste d'un moyen pour visualiser le parcours.
+Nous visitons ensuite les nœuds voisins de `0`, c’est à dire `1`, `3`, `4` et `5`.
+
+![0](Images/bfs_visited_2.png)
+
+`Les noeud voisins de 0 sont marqués comme visités.`
+
+Le voisin non visité de `1` est `2`, et le voisin non visité de `4` et `5` est le nœud `6`. Visitions alors `2` et `6`:
+
+![0](Images/bfs_visited_3.png)
+
+`Les noeuds 2 et 6 sont marqués comme visités.`
+
+`Ils sont une troisième “profondeur” de graphe.`
+
+
+Enfin, le dernier nœud non visité est `2`:
+
+![0](Images//bfs_visited_4.png)
+
+`Tous les noeuds sont enfin visités.`
+
+</center> 
+
+**QUE SE PASSE-T-IL?**
+
+En partant d’un `nœud racine` **N**, l’algorithme va explorer les `arrêtes` de **N** pour trouver les nœuds directement accessibles depuis **N**.
+
+On dit que le BFS parcourt le graphe en largeur puisqu’il visite d’abord tous les voisins d’un nœud (largeur), avant d’approfondir vers les nœuds suivants.
+
+On va donc d’abord découvrir tous les nœuds voisins du nœud racine **N**, puis tous les voisins des voisins, puis leurs voisins…et ainsi de suite jusqu’à ce que tout le graphe ait été visité.
+
+Le BFS porte ce nom puisqu’il étend la frontière entre les nœuds visités et les nœuds non-visités selon la largeur du graphe.
