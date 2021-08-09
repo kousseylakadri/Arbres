@@ -6,7 +6,6 @@
 	- [Définition](#définition)
 	- [Notation](#notation)
 		- [Exemple](#exemple)
-		- [Exemple de Répresentation](#exemple-de-répresentation)
 	- [Complexité temporelle](#complexité-temporelle)
 	- [Caractéristiques](#caractéristiques)
 	- [Parcours](#parcours)
