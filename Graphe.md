@@ -80,7 +80,7 @@ E = \{(a,b), (a,c), (b,c), (c,b)\}
 
 #### Exemple 
 📚 [Refernce](https://www.metasyntactic.io/index.php/2019/11/16/graphes-iii-parcours-en-profondeur/)
-<center>
+<div align="center">
 
 Considérons le graphe suivant:
 
@@ -145,7 +145,7 @@ Pour finir avec `7`:
 
 Nous venons de visiter tout le graphe en profondeur.
 
-</center>
+</div>
 
 **Que se passe-t-il?**
 
@@ -174,7 +174,7 @@ On explore les sommets successeurs directs
 
 #### Exemple : 
 📚 [Refernce](https://www.metasyntactic.io/index.php/2019/10/27/graphes-ii-parcours-en-largeur/)
-<center>
+<div align="center">
 Considérons le graphe suivant:
 
 ![0](Images/graphe_2.png)
@@ -208,7 +208,7 @@ Enfin, le dernier nœud non visité est `2`:
 
 `Tous les noeuds sont enfin visités.`
 
-</center> 
+</div> 
 
 **QUE SE PASSE-T-IL?**
 
