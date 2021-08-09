@@ -38,8 +38,6 @@ V = \{a, b, c\}
 E = \{(a,b), (a,c), (b,c), (c,b)\}  
 ```
 
-### Exemple de Répresentation
-
 
 ## Complexité temporelle 
 
