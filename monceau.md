@@ -6,7 +6,6 @@
 
 - [Monceau (Heap)](#monceau-heap)
   - [Définition](#définition)
-  - [Notation](#notation)
   - [Complexité temporelle](#complexité-temporelle)
   - [Insertion](#insertion)
     - [Exemple Insertion](#exemple-insertion)
@@ -26,14 +25,6 @@ descendants
 plus grande ou égale à celles de ses deux fils.
 - On parle d’un Min-heap si tout nœud a une valeur
 plus petite ou égale à celles de ses deux fils
-
-## Notation
-| Étiquette | Signification |
-| :---: | :---: |
-| G | un Graphes |
-| V | un ensemble de sommets (vertices, noeuds) |
-| E | une collection d'arêtes (edges, arcs) |
-
 
 ## Complexité temporelle 
 
