@@ -15,8 +15,9 @@
 		- [Parcours en largeur (Breadth-First Search)](#parcours-en-largeur-breadth-first-search)
 			- [Propriétés du parcours en largeur](#propriétés-du-parcours-en-largeur)
 			- [Exemple :](#exemple-)
-- [Floyd-Warshall](#floyd-warshall)
-- [L’algorithme de Dijkstra](#lalgorithme-de-dijkstra)
+	- [Floyd-Warshall](#floyd-warshall)
+	- [L’algorithme de Dijkstra](#lalgorithme-de-dijkstra)
+	- [l'algorithme de Kruskal](#lalgorithme-de-kruskal)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -30,8 +31,8 @@
 | Étiquette | Signification |
 | :---: | :---: |
 | G | un Graphes |
-| V | un ensemble de sommets (vertices, noeuds) | 
-| E | une collection d'arêtes (edges, arcs) |
+| V | un ensemble de sommets (vertices, noeuds) UN OBJETS| 
+| E | une collection d'arêtes (edges, arcs) relations binaires|
 ### Exemple  
 
 ```
@@ -221,8 +222,11 @@ On va donc d’abord découvrir tous les nœuds voisins du nœud racine **N**, p
 
 Le BFS porte ce nom puisqu’il étend la frontière entre les nœuds visités et les nœuds non-visités selon la largeur du graphe.
 
-# Floyd-Warshall
+## Floyd-Warshall
 ![exemple-Floyd-Warshall](Images/exemple-Floyd-Warshall.png)
 ![Floyd-Warshall](Images/Floyd-Warshall.png)
 
-# L’algorithme de Dijkstra
+## L’algorithme de Dijkstra
+
+## l'algorithme de Kruskal
+il prends le point le plus minim

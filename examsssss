@@ -1,0 +1,50 @@
+class Programme{
+  public:
+    // Retourne le numéro de session minimum du cours
+    // Ex.: INF1120=1, INF2120=2, INF3105=3.
+    int  session(string sigle) const;
+
+    // Retourne vrai ssi le cours c2 suit le cours c1 (directement ou indirectement)
+    // Ex: suit("INF1120", "INF2120") = true
+    // Ex: suit("INF1120", "INF3105") = true
+    // Ex: suit("INF2120", "INF1120") = false
+    bool suit(string c1, string c2) const;
+
+    // Retourne vrai ssi la sélection est valide. Pour programme valideur.
+    //  dejas : cours déjà réussis
+    //  opts : cours optionnels désirés
+    //  nbCoursMax: nombre maximum de cours par session
+    //  sel: sortie d'un TP5 à valider (sélection des cours par sessions)
+    bool valider(set<string>& dejas, set<string> opts,
+                 int nbCoursMax, vector<set<string>> sel) const;
+
+  private:
+    // Ex.: ["INF3105"]={"INF1132", "INF2120"}
+    map<string, set<string> > prealables;
+    set<string> obligatoires; // ensemble des cours obligatoires
+  friend ifstream operator>>(ifstream&, Programme&);
+};
+
+bool Programme::suit(string c1, string c2) const{
+    set<string> vus;      // marqueurs de cours visités
+    queue<string> a_voir; // file des cours à visiter.
+    a_voir.push(c1);
+    while(!a_voir.empty()){
+        string c = a_voir.front(); // front consulte le prochain sans l'enlever
+        if(c==c2)
+            return true;
+        a_voir.pop();  // défile, c-à-d retire le prochain
+        if(vus.find(c)==vus.end()){ // si vus ne contient pas c :
+            vus.insert(c); // <<< LIGNE 11
+            map<string, set<string>>::const_iterator iter = prealables.begin();
+            for( ;iter!=prealables.end();++iter){
+                string x = iter->first; // ex.: INF3105;
+                set<string> Y = iter->second; //ex.: {INF1132, INF2120}
+                for(string y : Y) // itère sur tout les y dans Y
+                   if(y==c) // y==c est préalable à x, donc x suit c
+                       a_voir.push(x);
+            }
+        }
+    }
+    return ________; // À compléter.
+}
