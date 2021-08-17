@@ -15,6 +15,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Monceau (Heap)
+
 ## Définition  
 
 Un monceau (tas) est un arbre binaire complet dans
