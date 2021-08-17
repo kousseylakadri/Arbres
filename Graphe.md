@@ -15,10 +15,13 @@
 		- [Parcours en largeur (Breadth-First Search)](#parcours-en-largeur-breadth-first-search)
 			- [Propriétés du parcours en largeur](#propriétés-du-parcours-en-largeur)
 			- [Exemple :](#exemple-)
+- [Floyd-Warshall](#floyd-warshall)
+- [L’algorithme de Dijkstra](#lalgorithme-de-dijkstra)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Graphes
+[Resource](https://homepages.laas.fr/huguet/drupal/sites/homepages.laas.fr.huguet/files/u78/2018-2019-GRAPHES-V0.pdf)
 ## Définition  
 
 `G = (V,E)`
@@ -27,14 +30,15 @@
 | Étiquette | Signification |
 | :---: | :---: |
 | G | un Graphes |
-| V | un ensemble de sommets (vertices, noeuds) |
+| V | un ensemble de sommets (vertices, noeuds) | 
 | E | une collection d'arêtes (edges, arcs) |
 ### Exemple  
 
 ```
 G = (V,E)                           
-V = \{a, b, c\}                     
+V = \{a, b, c\}       
 E = \{(a,b), (a,c), (b,c), (c,b)\}  
+ou E = {(a,c,3),(b,a,3),(c,a,3),(c,d,3),(d,b,4), (d,e,3),(e,c,15),(e,d,3)}             
 ```
 
 
@@ -216,3 +220,9 @@ On dit que le BFS parcourt le graphe en largeur puisqu’il visite d’abord tou
 On va donc d’abord découvrir tous les nœuds voisins du nœud racine **N**, puis tous les voisins des voisins, puis leurs voisins…et ainsi de suite jusqu’à ce que tout le graphe ait été visité.
 
 Le BFS porte ce nom puisqu’il étend la frontière entre les nœuds visités et les nœuds non-visités selon la largeur du graphe.
+
+# Floyd-Warshall
+![exemple-Floyd-Warshall](Images/exemple-Floyd-Warshall.png)
+![Floyd-Warshall](Images/Floyd-Warshall.png)
+
+# L’algorithme de Dijkstra
